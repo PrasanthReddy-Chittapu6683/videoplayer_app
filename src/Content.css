@@ -1,0 +1,53 @@
+.wrapper {
+
+
+
+    transition: margin .5s;
+    margin: 0 80px 0 -50px;
+}
+
+.wrapper.is-nav-open {
+    margin-left: 0;
+
+}
+
+.is-nav-open {
+    transition: margin .5s;
+}
+
+.nav {
+    position: relative;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    /* border-right: 1px solid rgb(161, 161, 161); */
+}
+
+.sidebar__icon {
+    position: absolute;
+    top: 0;
+    right: -40px;
+
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.sidebar:hover {
+    color: #5eb2ff;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.video__box:hover {
+    transform: scale(1.04);
+    opacity: 1;
+}
+
+.video__box {
+
+    object-fit: contain;
+    transition: transform .55s;
+}

@@ -76,7 +76,7 @@ const Content: FC<ContentProps> = ({ openTabStatus }) => {
         return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
     }
     return (
-        <Box flex='1' display='flex' flexDirection='row' >
+        <Box flex='1' display='flex' flexDirection='row' className={openTabStatus ? "content is-nav-open" : ' content wrapper'}>
             {
                 openTabStatus &&
                 <Box flex='0.2'>
@@ -115,31 +115,32 @@ const Content: FC<ContentProps> = ({ openTabStatus }) => {
                     </Box>
                 </Heading>
 
-                <Box width='110%' justifyContent='flex-start' minHeight='90vh' maxHeight='75vh' overflow='auto'
+                <Box width='98%' justifyContent='flex-start' minHeight='90vh' maxHeight='75vh' overflow='auto'
                     display='flex' flexWrap='wrap'>
                     {getVidoes.videoDtls.map((video, index) => (
                         <>
-                            <Link href='#'>
-                                <Box width='400px' height='400px' bg="transparent" m='2' border='1px solid'
+                            <Link href='#' textDecoration='dotted'>
+                                <Box   width='280px' height='340px' bg="transparent" m='2' border='1px solid'
 
-                                    boxShadow='0 0 2px 3px rgb(66 153 225 / 60%)' borderColor='#4299e187' objectFit='cover'
+                                    boxShadow='0 0 2px 3px rgb(66 153 225 / 60%)' borderColor='#4299e187'
+                                    overflow='auto' objectFit='cover'
                                     className='video__box'
                                 >
                                     <img src={video?.snippet?.thumbnails?.maxres?.url ||
                                         video?.snippet?.thumbnails?.standard?.url ||
                                         video?.snippet?.thumbnails?.medium?.url} alt="" />
-                                    <Box display='flex' flexDirection='row' m='5' justifyContent='stretch' alignItems='center'>
+                                    <Box   display='flex' flexDirection='row' m='5' justifyContent='stretch' alignItems='center'>
                                         <Avatar
                                             alt={video?.snippet?.channelTitle}
                                             src={video?.snippet?.thumbnails?.medium?.url}
                                         />
-                                        <Heading size='xs' ml='3'>{video?.snippet?.title} </Heading>
+                                        <Heading  size='xs' ml='3'>{video?.snippet?.title} </Heading>
                                     </Box>
                                     <Box display='flex' flexDirection='row' ml='5' justifyContent='space-between' alignItems='center'>
                                         {video?.snippet?.channelTitle}
                                         <FiMoreVertical fontSize='25px' />
                                     </Box>
-                                    <Box display='flex' color='lightseagreen' flexDirection='row' ml='5' alignItems='center'>
+                                    <Box display='flex' fontSize='12px' color='lightseagreen' flexDirection='row' ml='5' alignItems='center'>
                                         {
                                             video?.statistics?.viewCount ?
                                                 <> {nFormatter(parseInt(video?.statistics?.viewCount), 2)} views •  </>
@@ -150,22 +151,22 @@ const Content: FC<ContentProps> = ({ openTabStatus }) => {
 
                                     </Box>
                                     <Box display='flex' color='lightseagreen' justifyContent='space-evenly'
-                                        flexDirection='row' ml='2' alignItems='center'>
+                                        flexDirection='row' ml='2' alignItems='center' fontSize='12px'>
                                         {
                                             video?.statistics?.commentCount ?
-                                                <> <FaComments /> {nFormatter(parseInt(video?.statistics?.commentCount), 2)} comments   </>
+                                                <> <FaComments /> {nFormatter(parseInt(video?.statistics?.commentCount), 2)}   </>
                                                 :
                                                 <></>
                                         }
                                         {
                                             video?.statistics?.likeCount ?
-                                                <> <AiFillLike /> {nFormatter(parseInt(video?.statistics?.likeCount), 2)} views   </>
+                                                <> <AiFillLike /> {nFormatter(parseInt(video?.statistics?.likeCount), 2)}   </>
                                                 :
                                                 <></>
                                         }
                                         {
                                             video?.statistics?.dislikeCount ?
-                                                <> <AiFillDislike /> {nFormatter(parseInt(video?.statistics?.dislikeCount), 2)} views   </>
+                                                <> <AiFillDislike /> {nFormatter(parseInt(video?.statistics?.dislikeCount), 2)}   </>
                                                 :
                                                 <></>
                                         }

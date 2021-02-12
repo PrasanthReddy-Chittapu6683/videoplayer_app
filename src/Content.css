@@ -3,11 +3,11 @@
 
 
     transition: margin .5s;
-    margin: 0 80px 0 -50px;
+    margin: 0 80px 0 -5px;
 }
 
 .wrapper.is-nav-open {
-    margin-left: 0;
+    margin-left: 50px;
 
 }
 
@@ -44,8 +44,15 @@
 .video__box:hover {
     transform: scale(1.04);
     opacity: 1;
+    text-decoration: dotted;
 }
 
+.content {
+    overflow: auto;
+    margin: 0;
+    text-decoration: none;
+}
+ 
 .video__box {
 
     object-fit: contain;

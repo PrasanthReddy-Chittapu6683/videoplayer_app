@@ -120,7 +120,7 @@ const Content: FC<ContentProps> = ({ openTabStatus }) => {
                     {getVidoes.videoDtls.map((video, index) => (
                         <>
                             <Link href='#'>
-                                <Box width='450px' height='450px' bg="transparent" m='2' border='1px solid'
+                                <Box width='400px' height='400px' bg="transparent" m='2' border='1px solid'
 
                                     boxShadow='0 0 2px 3px rgb(66 153 225 / 60%)' borderColor='#4299e187' objectFit='cover'
                                     className='video__box'

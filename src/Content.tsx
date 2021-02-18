@@ -115,26 +115,24 @@ const Content: FC<ContentProps> = ({ openTabStatus }) => {
                     </Box>
                 </Heading>
 
-                <Box width='98%' justifyContent='flex-start' minHeight='90vh' maxHeight='75vh' overflow='auto'
+                <Box width='98%' justifyContent='space-evenly' minHeight='90vh' maxHeight='75vh' overflow='auto'
                     display='flex' flexWrap='wrap'>
                     {getVidoes.videoDtls.map((video, index) => (
                         <>
                             <Link href='#' textDecoration='dotted'>
-                                <Box   width='280px' height='340px' bg="transparent" m='2' border='1px solid'
-
+                                <Box width='280px' height='340px' bg="transparent" m='2' border='1px solid'
                                     boxShadow='0 0 2px 3px rgb(66 153 225 / 60%)' borderColor='#4299e187'
                                     overflow='auto' objectFit='cover'
-                                    className='video__box'
-                                >
+                                    className='video__box' >
                                     <img src={video?.snippet?.thumbnails?.maxres?.url ||
                                         video?.snippet?.thumbnails?.standard?.url ||
                                         video?.snippet?.thumbnails?.medium?.url} alt="" />
-                                    <Box   display='flex' flexDirection='row' m='5' justifyContent='stretch' alignItems='center'>
+                                    <Box display='flex' flexDirection='row' m='5' justifyContent='stretch' alignItems='center'>
                                         <Avatar
                                             alt={video?.snippet?.channelTitle}
                                             src={video?.snippet?.thumbnails?.medium?.url}
                                         />
-                                        <Heading  size='xs' ml='3'>{video?.snippet?.title} </Heading>
+                                        <Heading size='xs' ml='3'>{video?.snippet?.title} </Heading>
                                     </Box>
                                     <Box display='flex' flexDirection='row' ml='5' justifyContent='space-between' alignItems='center'>
                                         {video?.snippet?.channelTitle}
